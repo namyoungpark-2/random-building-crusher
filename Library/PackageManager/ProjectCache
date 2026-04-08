@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 639112846240000000
-    m_Hash: 1907927753
+      ticks: 639112854250000000
+    m_Hash: 951406483
   m_LockFileStatus:
     m_FilePath: /Users/namyoungpark/ai-game-building-crusher/random-building-crusher/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 639112846250000000
-    m_Hash: 1556631890
+      ticks: 639112854330000000
+    m_Hash: 2545144135
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -22,6 +22,211 @@ m_LocalPackages:
 m_ProjectPath: /Users/namyoungpark/ai-game-building-crusher/random-building-crusher/Packages
 m_EditorVersion: 6000.3.13f1 (8c4f11e4fb20)
 m_ResolvedPackages:
+- packageId: com.unity.textmeshpro@5.0.0
+  testable: 0
+  isDirectDependency: 1
+  version: 5.0.0
+  source: 2
+  resolvedPath: /Users/namyoungpark/ai-game-building-crusher/random-building-crusher/Library/PackageCache/com.unity.textmeshpro@53f43edfd2e0
+  assetPath: Packages/com.unity.textmeshpro
+  name: com.unity.textmeshpro
+  displayName: TextMeshPro
+  author:
+    name: 
+    email: 
+    url: 
+  category: Text Rendering
+  type: shim
+  description: This package is no longer supported. TextMeshPro functionalities are
+    now included in the com.unity.ugui package. To continue using them, consider
+    adding it to your project dependencies.
+  errors: []
+  versions:
+    all:
+    - 5.0.0
+    compatible: []
+    recommended: 
+    deprecated: []
+  dependencies:
+  - name: com.unity.ugui
+    version: 2.0.0
+  resolvedDependencies:
+  - name: com.unity.ugui
+    version: 2.0.0
+  - name: com.unity.modules.ui
+    version: 1.0.0
+  - name: com.unity.modules.imgui
+    version: 1.0.0
+  keywords: []
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+    compliance:
+      status: 0
+      violations: []
+  hideInEditor: 1
+  entitlements:
+    licensingModel: 0
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: 
+  hasRepository: 0
+  repository:
+    type: 
+    url: 
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 1
+    deprecationMessage: This package is no longer supported. TextMeshPro functionalities
+      are now included in the com.unity.ugui package. To continue using them, consider
+      adding it to your project dependencies.
+    isDiscoverable: 0
+  isDeprecated: 0
+  deprecationMessage: 
+  git:
+    hash: 
+    revision: 
+  upmReserved: 
+  signature:
+    status: 0
+    reason: 
+    attestation:
+      format: 
+      publishingChannel: 
+      entitlementKeys: []
+      ownerOrgName: 
+      ownerOrgId: 
+      publisherName: 
+    errorCode: 
+  assetStore:
+    productId: 
+  fingerprint: 53f43edfd2e0bf2438ca6e2038ba12107a181253
+  editorCompatibility:
+    compatibilityLevel: 0
+    minimumPackageVersion: 
+    minimumUnityVersion: 2023.2
+  compliance:
+    status: 0
+    violation:
+      scopePatternExpression: 
+      message: 
+      readMoreLink: 
+- packageId: com.unity.ugui@2.0.0
+  testable: 0
+  isDirectDependency: 1
+  version: 2.0.0
+  source: 2
+  resolvedPath: /Users/namyoungpark/ai-game-building-crusher/random-building-crusher/Library/PackageCache/com.unity.ugui@8ccc29d23a79
+  assetPath: Packages/com.unity.ugui
+  name: com.unity.ugui
+  displayName: uGUI
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: 
+  description: "uGUI (Unity UI) is a set of tools for developing user interfaces
+    for games and applications. It is a GameObject-based UI system that uses Components
+    and the Game View to arrange, position, and style user interfaces. \u200B You
+    cannot use Unity UI to create or change user interfaces in the Unity Editor."
+  errors: []
+  versions:
+    all:
+    - 2.0.0
+    compatible:
+    - 2.0.0
+    recommended: 2.0.0
+    deprecated: []
+  dependencies:
+  - name: com.unity.modules.ui
+    version: 1.0.0
+  - name: com.unity.modules.imgui
+    version: 1.0.0
+  resolvedDependencies:
+  - name: com.unity.modules.ui
+    version: 1.0.0
+  - name: com.unity.modules.imgui
+    version: 1.0.0
+  keywords:
+  - UI
+  - ugui
+  - Unity UI
+  - Canvas
+  - TextMeshPro
+  - TextMesh Pro
+  - Text
+  - TMP
+  - SDF
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+    compliance:
+      status: 0
+      violations: []
+  hideInEditor: 1
+  entitlements:
+    licensingModel: 0
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: 
+  hasRepository: 0
+  repository:
+    type: 
+    url: 
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 2.0.0
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+    isDiscoverable: 1
+  isDeprecated: 0
+  deprecationMessage: 
+  git:
+    hash: 
+    revision: 
+  upmReserved: 
+  signature:
+    status: 0
+    reason: 
+    attestation:
+      format: 
+      publishingChannel: 
+      entitlementKeys: []
+      ownerOrgName: 
+      ownerOrgId: 
+      publisherName: 
+    errorCode: 
+  assetStore:
+    productId: 
+  fingerprint: 8ccc29d23a79b6785b16aa5c071a632b8148cd58
+  editorCompatibility:
+    compatibilityLevel: 0
+    minimumPackageVersion: 2.0.0
+    minimumUnityVersion: 2019.2
+  compliance:
+    status: 0
+    violation:
+      scopePatternExpression: 
+      message: 
+      readMoreLink: 
 - packageId: com.unity.multiplayer.center@1.0.1
   testable: 0
   isDirectDependency: 1

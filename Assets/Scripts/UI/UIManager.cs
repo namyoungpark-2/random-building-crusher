@@ -40,9 +40,9 @@ namespace BuildingCrusher.UI
             myRect.anchoredPosition = Vector2.zero;
 
             _titleScreen = CreatePanel("TitleScreen");
-            var titleText = CreateText(_titleScreen.transform, "랜덤 건물 부수기", 60, TextAlignmentOptions.Center);
+            var titleText = CreateText(_titleScreen.transform, "BUILDING CRUSHER", 60, TextAlignmentOptions.Center);
             titleText.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 200);
-            _startButton = CreateButton(_titleScreen.transform, "시작", new Vector2(0, -100), OnStartClicked);
+            _startButton = CreateButton(_titleScreen.transform, "START", new Vector2(0, -100), OnStartClicked);
 
             _gameScreen = CreatePanel("GameScreen");
             _gameScreen.SetActive(false);
@@ -56,7 +56,7 @@ namespace BuildingCrusher.UI
             _hpText = CreateText(hud.transform, "HP 100/100", 24, TextAlignmentOptions.Left);
             _hpText.GetComponent<RectTransform>().anchoredPosition = new Vector2(-350, -30);
 
-            _stageText = CreateText(hud.transform, "스테이지 1", 28, TextAlignmentOptions.Center);
+            _stageText = CreateText(hud.transform, "Stage 1", 28, TextAlignmentOptions.Center);
             _stageText.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -30);
 
             _timerText = CreateText(hud.transform, "30.0s", 28, TextAlignmentOptions.Right);
@@ -86,7 +86,7 @@ namespace BuildingCrusher.UI
             _resultScoreText.color = new Color(1f, 0.75f, 0.2f);
             _resultScoreText.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -50);
 
-            _restartButton = CreateButton(_resultScreen.transform, "다시 하기", new Vector2(0, -300), OnRestartClicked);
+            _restartButton = CreateButton(_resultScreen.transform, "RETRY", new Vector2(0, -300), OnRestartClicked);
         }
 
         public void ShowTitle()
@@ -110,7 +110,7 @@ namespace BuildingCrusher.UI
             _resultScreen.SetActive(true);
 
             _resultStageText.text = "GAME OVER";
-            _resultDetailText.text = $"스테이지 {snap.stage - 1} 도달\n건물 {snap.buildingsDestroyed}개 파괴\n총 데미지 {Mathf.RoundToInt(snap.totalDamage)}";
+            _resultDetailText.text = $"Stage {snap.stage - 1}\nBuildings: {snap.buildingsDestroyed}\nDamage: {Mathf.RoundToInt(snap.totalDamage)}";
             _resultScoreText.text = $"{snap.score:N0}";
         }
 
@@ -119,7 +119,7 @@ namespace BuildingCrusher.UI
             _hpText.text = $"HP {Mathf.RoundToInt(snap.character.hp)}/{Mathf.RoundToInt(snap.character.maxHp)}";
             _hpText.color = snap.character.hp / snap.character.maxHp < 0.3f ? Color.red : Color.white;
 
-            _stageText.text = $"스테이지 {snap.stage}";
+            _stageText.text = $"Stage {snap.stage}";
             _timerText.text = $"{snap.stageTimer:F1}s";
             _timerText.color = snap.stageTimer < 10f ? Color.red : Color.white;
 
@@ -135,9 +135,9 @@ namespace BuildingCrusher.UI
             if (snap.activeEnvHazard != null)
                 _stageText.text += snap.activeEnvHazard switch
                 {
-                    "earthquake" => " [지진!]",
-                    "storm" => " [폭풍!]",
-                    "acid_rain" => " [산성비!]",
+                    "earthquake" => " [QUAKE!]",
+                    "storm" => " [STORM!]",
+                    "acid_rain" => " [ACID!]",
                     _ => ""
                 };
         }

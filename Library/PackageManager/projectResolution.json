@@ -9,6 +9,26 @@
     "/Applications/Unity/Hub/Editor/6000.3.13f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/BuiltInPackagesCombined.sha1"
   ],
   "outputs": {
+    "com.unity.textmeshpro@5.0.0": {
+      "name": "com.unity.textmeshpro",
+      "displayName": "TextMeshPro",
+      "resolvedPath": "/Users/namyoungpark/ai-game-building-crusher/random-building-crusher/Library/PackageCache/com.unity.textmeshpro@53f43edfd2e0",
+      "fingerprint": "53f43edfd2e0bf2438ca6e2038ba12107a181253",
+      "editorCompatibility": "2023.2.0a1",
+      "version": "5.0.0",
+      "source": "builtin",
+      "testable": false
+    },
+    "com.unity.ugui@2.0.0": {
+      "name": "com.unity.ugui",
+      "displayName": "uGUI",
+      "resolvedPath": "/Users/namyoungpark/ai-game-building-crusher/random-building-crusher/Library/PackageCache/com.unity.ugui@8ccc29d23a79",
+      "fingerprint": "8ccc29d23a79b6785b16aa5c071a632b8148cd58",
+      "editorCompatibility": "2019.2.0a1",
+      "version": "2.0.0",
+      "source": "builtin",
+      "testable": false
+    },
     "com.unity.multiplayer.center@1.0.1": {
       "name": "com.unity.multiplayer.center",
       "displayName": "Multiplayer Center",
