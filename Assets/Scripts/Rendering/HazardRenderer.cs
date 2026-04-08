@@ -61,14 +61,8 @@ namespace BuildingCrusher.Rendering
                 go = new GameObject($"Hazard_{h.uid}");
                 go.transform.SetParent(hazardContainer);
                 var sr = go.AddComponent<SpriteRenderer>();
-                sr.color = h.type switch
-                {
-                    "debris" => new Color(0.6f, 0.5f, 0.4f),
-                    "glass" => new Color(0.7f, 0.9f, 1f, 0.7f),
-                    "missile" => Color.red,
-                    "gas_explosion" => new Color(1f, 0.6f, 0.1f),
-                    _ => Color.white,
-                };
+                sr.sprite = SpriteHelper.HazardSprite(h.type);
+                sr.sortingOrder = 5;
                 go.AddComponent<HazardView>();
             }
             go.transform.localScale = new Vector3(0.2f, 0.2f, 1f);

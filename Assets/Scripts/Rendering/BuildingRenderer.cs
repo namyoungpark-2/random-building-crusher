@@ -82,7 +82,8 @@ namespace BuildingCrusher.Rendering
                 {
                     go = new GameObject($"Floor_{i}");
                     go.transform.SetParent(buildingContainer);
-                    go.AddComponent<SpriteRenderer>();
+                    var sr = go.AddComponent<SpriteRenderer>();
+                    sr.sprite = SpriteHelper.BuildingSprite(snap.building.defId);
                     go.AddComponent<BuildingView>();
                 }
 

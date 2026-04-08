@@ -22,7 +22,9 @@ namespace BuildingCrusher.Rendering
                 go = new GameObject("Character");
                 go.transform.SetParent(transform);
                 var sr = go.AddComponent<SpriteRenderer>();
-                sr.color = new Color(1f, 0.75f, 0.2f);
+                sr.sprite = SpriteHelper.Character;
+                sr.color = Color.white;
+                sr.sortingOrder = 10;
                 go.AddComponent<CharacterView>();
             }
             _view = go.GetComponent<CharacterView>();
@@ -38,11 +40,11 @@ namespace BuildingCrusher.Rendering
 
             var sr = _view.SR;
             if (snap.character.invincible)
-                sr.color = new Color(1f, 0.75f, 0.2f, Mathf.PingPong(Time.time * 8f, 1f));
+                sr.color = new Color(1f, 1f, 1f, Mathf.PingPong(Time.time * 8f, 1f));
             else if (snap.character.stunned)
                 sr.color = Color.gray;
             else
-                sr.color = new Color(1f, 0.75f, 0.2f);
+                sr.color = Color.white;
         }
     }
 }
