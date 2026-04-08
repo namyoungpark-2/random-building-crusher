@@ -1,0 +1,287 @@
+Unity Editor version:    6000.4.1f1 (8535861f39e1)
+Branch:                  6000.4/staging
+Build type:              Release
+Batch mode:              YES
+macOS version:           Version 15.4.1 (Build 24E263)
+Darwin version:          24.4.0
+Architecture:            arm64
+Running under Rosetta:   NO
+Available memory:        32768 MB
+Date:                    2026-04-08T22:38:23Z
+[Licensing::Module] Trying to connect to existing licensing client channel...
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-namyoungpark" at "2026-04-08T22:38:23.865062Z"
+
+COMMAND LINE ARGUMENTS:
+/Applications/Unity/Hub/Editor/6000.4.1f1/Unity.app/Contents/MacOS/Unity
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+/Users/namyoungpark/ai-game-building-crusher/random-building-crusher
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+54234
+-licensingIpc
+LicenseClient-namyoungpark
+-force-metal
+-job-worker-count
+4
+-background-job-worker-count
+8
+-gc-helper-count
+1
+-name AssetImport
+Successfully changed project path to: /Users/namyoungpark/ai-game-building-crusher/random-building-crusher
+/Users/namyoungpark/ai-game-building-crusher/random-building-crusher
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+Player connection [8545766528]  Target information:
+
+Player connection [8545766528]  * "[IP] 172.20.1.155 [Port] 0 [Flags] 2 [Guid] 3089140247 [EditorId] 3089140247 [Version] 1048832 [Id] OSXEditor(0,PaulYu-Laptop.localdomain) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" 
+
+Player connection [8545766528] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [8545766528] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 4
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Initialize engine version: 6000.4.1f1 (8535861f39e1)
+[Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/6000.4.1f1/Unity.app/Contents/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path /Users/namyoungpark/ai-game-building-crusher/random-building-crusher/Assets
+Forcing GfxDevice: Metal
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+ preferred device: Apple M1 Pro (high power)
+Metal devices available: 1
+0: Apple M1 Pro (high power)
+Using device Apple M1 Pro (high power)
+Initializing Metal device caps: Apple M1 Pro
+Mac GPU Family: 2
+Apple GPU Family: 7
+MSL Version: 3.0
+Has Float MSAA: 1
+Has Float Filtering: 1
+ReadWrite Texture Tier: 2
+Initialize mono
+Mono path[0] = '/Applications/Unity/Hub/Editor/6000.4.1f1/Unity.app/Contents/Resources/Scripting/Managed'
+Mono path[1] = '/Applications/Unity/Hub/Editor/6000.4.1f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityjit-macos'
+Mono config path = '/Applications/Unity/Hub/Editor/6000.4.1f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56968
+CodeReloadManager initialized
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Error: HandshakeResponse reported an error:
+	ResponseCode: 505
+	ResponseStatus: Unsupported protocol version '1.18.1'.
+[Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-namyoungpark"
+[Licensing::IpcConnector] LicenseClient-namyoungpark channel disconnected successfully.
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-namyoungpark-6000.4.1" at "2026-04-08T22:38:24.412266Z"
+Registering precompiled unity dll's ...
+Register platform support module: /Applications/Unity/Hub/Editor/6000.4.1f1/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: /Applications/Unity/Hub/Editor/6000.4.1f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Registered in 0.000406 seconds.
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.1+9fbee8e
+  Session Id:              6970c4d218ca4ef392b7e2d906ee6989
+  Correlation Id:          2fc3f3f2aac9351dfa01347617fa0bfa
+  External correlation Id: 6593163889512744509
+  Machine Id:              IB9Q0KtUsXn9Stpj7fbmA9eSdyM=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-namyoungpark-6000.4.1" (connect: 0.00s, validation: 0.00s, handshake: 0.44s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-namyoungpark-6000.4.1-notifications" at "2026-04-08T22:38:24.857763Z"
+[Licensing::Module] Licensing Background thread has ended after 0.99s
+Package Manager log level set to [2]
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.295 seconds
+Domain Reload Profiling: 631ms
+	BeginReloadAssembly (77ms)
+	RebuildCommonClasses (32ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (40ms)
+	LoadAllAssembliesAndSetupDomain (175ms)
+		LoadAssemblies (76ms)
+		AnalyzeDomain (167ms)
+			TypeCache.Refresh (166ms)
+				TypeCache.ScanAssembly (152ms)
+	FinalizeReload (295ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (33ms)
+			BeforeProcessingInitializeOnLoad (65ms)
+			ProcessInitializeOnLoadAttributes (81ms)
+			ProcessInitializeOnLoadMethodAttributes (66ms)
+[CoreBusinessMetrics] Unexpected thread when updating session info.
+========================================================================
+Worker process is ready to serve import requests
+Import Worker Mode flag is 0x00
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 14569738870845-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+Assembly Assembly-CSharp-Editor-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-Editor.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp.dll at Library/ScriptAssemblies/Assembly-CSharp.dll not valid. Loading of assembly skipped.
+Assembly BuildingCrusher.dll at Library/ScriptAssemblies/BuildingCrusher.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Editor.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Tests.dll not valid. Loading of assembly skipped.
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.233 seconds
+Domain Reload Profiling: 419ms
+	BeginReloadAssembly (106ms)
+		DisableScriptedObjects (3ms)
+		CreateAndSetChildDomain (26ms)
+	RebuildCommonClasses (32ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (20ms)
+	LoadAllAssembliesAndSetupDomain (15ms)
+		LoadAssemblies (48ms)
+		AnalyzeDomain (9ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (3ms)
+	FinalizeReload (234ms)
+		SetupLoadedEditorAssemblies (0ms)
+			BeforeProcessingInitializeOnLoad (66ms)
+			ProcessInitializeOnLoadAttributes (54ms)
+			ProcessInitializeOnLoadMethodAttributes (29ms)
+Launching external process: /Applications/Unity/Hub/Editor/6000.4.1f1/Unity.app/Contents/Helpers/UnityShaderCompiler
+Launched and connected shader compiler UnityShaderCompiler after 0.03 seconds
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 83 unused Assets / (24.2 KB). Loaded Objects now: 682.
+Memory consumption went from 64.8 MB to 64.8 MB.
+Total: 3.848708 ms (FindLiveObjects: 0.032500 ms CreateObjectMapping: 0.009000 ms MarkObjects: 3.748417 ms  DeleteObjects: 0.058458 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 2107283.585627 seconds.
+  path: Assets/Scripts/Entities/BuildingView.cs
+  importAddress: Guid(1edcc7f08841b4bfdb9709fb8b41b845) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Entities/BuildingView.cs using Guid(1edcc7f08841b4bfdb9709fb8b41b845) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '0f0fe652671a4e6e956185e0c153e5c9') in 0.051029958 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d193bb6969d0aafcaa39fa594d43302f DependenciesID=19c0a97150bdcb604e784c945c3ad6eb StaticDependenciesID=ff78d65dbc4dc1b50513511a8ff127eb 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000058 seconds.
+  path: Assets/Scripts/UI/UIManager.cs
+  importAddress: Guid(77bfb80ebfe154f53a5b252c332f1463) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/UI/UIManager.cs using Guid(77bfb80ebfe154f53a5b252c332f1463) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'd70e828942d19a42c11b453e05987060') in 0.001216583 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=efa3509e92307bf461f76ee72c82b066 DependenciesID=c9c43a7208d3d35af4a3642dc44ea9bc StaticDependenciesID=5fb279e7caaf6e0a135db84e8bab22b8 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000075 seconds.
+  path: Assets/Scripts/Entities/FloatingTextView.cs
+  importAddress: Guid(bf8a9d490f1f149d18f371de312fd9a8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Entities/FloatingTextView.cs using Guid(bf8a9d490f1f149d18f371de312fd9a8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '098d0c91a829076bea9ef878973b57be') in 0.001026416 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=aae8fb880834f769cc7221cfbfc4dd24 DependenciesID=b71451357b0bdf7b034611b60e9dfd4c StaticDependenciesID=895308433ddae90c3cc6569e2dfa14ed 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000112 seconds.
+  path: Assets/Scripts/BuildingCrusher.asmdef
+  importAddress: Guid(5826e7054b70b4585a71a8e60b78c25d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/BuildingCrusher.asmdef using Guid(5826e7054b70b4585a71a8e60b78c25d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'a9f90a0e7b274d7a86ab9d5af709524e') in 0.00217675 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=20d5ce0cdc2128e8d54a4feefa82369a DependenciesID=564e75f2162000e44dd24bd0b9dba1d7 StaticDependenciesID=89d299f9a98a404284e12317f19cd233 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000078 seconds.
+  path: Assets/Scripts/Rendering/BuildingRenderer.cs
+  importAddress: Guid(3cbb40d4432ce412a83f820840baf21e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Rendering/BuildingRenderer.cs using Guid(3cbb40d4432ce412a83f820840baf21e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'f4462dc665c029438e4c6936e9db7539') in 0.000903666 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e5333719db25f2575952920bf94999f7 DependenciesID=c23c831c9472044eae1aca3d6ccba5b2 StaticDependenciesID=864f7f6c7a011e2880b70c9f56bd1504 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000105 seconds.
+  path: Assets/Scripts/UI/LevelUpModal.cs
+  importAddress: Guid(9c7c84d17d1824356a24722c3e693b11) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/UI/LevelUpModal.cs using Guid(9c7c84d17d1824356a24722c3e693b11) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'e25ec347668fee547aeff434ddbe7d14') in 0.000919417 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=0f3ca8ec94152331fdebf06ab7fc59a9 DependenciesID=fdb06dcea96d972da21f03d94be68d4d StaticDependenciesID=fc058ab835c9b06c2842700f2973e56d 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000070 seconds.
+  path: Assets/Scripts/Data/SkillDefs.cs
+  importAddress: Guid(1a8682b21782b4344a4390d98a6290f9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Data/SkillDefs.cs using Guid(1a8682b21782b4344a4390d98a6290f9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '28a512f6cda37b13aa7fb32b21bb142a') in 0.000764708 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e5596200b199942045bc6f51a05280b6 DependenciesID=a68cc99c6021cdfe806bb76447c76855 StaticDependenciesID=3bc73d7f45b2d788d444d080a1d6bcf9 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000102 seconds.
+  path: Assets/Scripts/Editor/SceneSetup.cs
+  importAddress: Guid(51ed2520106494bb196a3453dc6161aa) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Editor/SceneSetup.cs using Guid(51ed2520106494bb196a3453dc6161aa) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'bf5cffdb3cdb10b1623ee7d0e4779eee') in 0.000846208 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=97b97d16c249be8d6e8a3f24d4394f8d DependenciesID=165da4142184cf5d2824b8e72ded0f0b StaticDependenciesID=09cadc351854f232a7df87111bc797ab 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000071 seconds.
+  path: Assets/Scripts/Rendering/CharacterRenderer.cs
+  importAddress: Guid(7e880388a222b4387ba2bb01c2d34165) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Rendering/CharacterRenderer.cs using Guid(7e880388a222b4387ba2bb01c2d34165) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '753bf255c072f246b20a852901a04f52') in 0.000893875 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f1a0a878d193e476974c478081f4234f DependenciesID=55adbb140c43e679cf1a7da9bec279dc StaticDependenciesID=d7a05a3dfd20f893f743bd62174cb962 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000103 seconds.
+  path: Assets/Scripts/Data/GameData.cs
+  importAddress: Guid(b8784a3d6e108446b87eb04b81f6b718) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Data/GameData.cs using Guid(b8784a3d6e108446b87eb04b81f6b718) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '67a2a9f74189bba295c1fb51521018f9') in 0.001126084 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=6681f375daf95fa187c50e28fa930ece DependenciesID=f434195f6cbc0a4cdc3f3b6e4184a2d0 StaticDependenciesID=998b76c92963f842b6b6c13f7f42dc05 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
