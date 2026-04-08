@@ -31,6 +31,14 @@ namespace BuildingCrusher.UI
                 transform.SetParent(canvasGo.transform);
             }
 
+            // Ensure UIManager RectTransform fills the Canvas
+            var myRect = GetComponent<RectTransform>();
+            if (myRect == null) myRect = gameObject.AddComponent<RectTransform>();
+            myRect.anchorMin = Vector2.zero;
+            myRect.anchorMax = Vector2.one;
+            myRect.sizeDelta = Vector2.zero;
+            myRect.anchoredPosition = Vector2.zero;
+
             _titleScreen = CreatePanel("TitleScreen");
             var titleText = CreateText(_titleScreen.transform, "랜덤 건물 부수기", 60, TextAlignmentOptions.Center);
             titleText.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 200);
