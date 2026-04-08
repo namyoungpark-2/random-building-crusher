@@ -1,0 +1,10 @@
+{
+    "name": "BuildingCrusher",
+    "rootNamespace": "BuildingCrusher",
+    "references": [
+        "Unity.TextMeshPro"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}
