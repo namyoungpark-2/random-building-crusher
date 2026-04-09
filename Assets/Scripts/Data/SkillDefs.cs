@@ -65,7 +65,7 @@ namespace BuildingCrusher.Data
             {
                 "power_hammer",
                 new SkillDef(
-                    "power_hammer", "파워 해머", "강력한 해머로 넓은 범위를 공격합니다.",
+                    "power_hammer", "Power Hammer", "Slow but powerful AOE. Speed -30%, Damage +80%",
                     SkillType.PowerHammer, SkillCategory.WeaponChange,
                     attackSpeedMult: 1.3f, damageMult: 1.8f, isAoe: true
                 )
@@ -73,7 +73,7 @@ namespace BuildingCrusher.Data
             {
                 "drill_arm",
                 new SkillDef(
-                    "drill_arm", "드릴 암", "드릴로 좁은 범위를 빠르게 관통합니다.",
+                    "drill_arm", "Drill Arm", "Ultra-fast drill. DPS x3 while stationary",
                     SkillType.DrillArm, SkillCategory.WeaponChange,
                     attackSpeedMult: 0.33f, rangeMult: 0.5f
                 )
@@ -81,7 +81,7 @@ namespace BuildingCrusher.Data
             {
                 "demolition_crane",
                 new SkillDef(
-                    "demolition_crane", "철거 크레인", "크레인으로 넓은 범위를 천천히 파괴합니다.",
+                    "demolition_crane", "Demo Crane", "Ranged attack. Range +200%, Damage -20%",
                     SkillType.DemolitionCrane, SkillCategory.WeaponChange,
                     damageMult: 0.8f, rangeMult: 3f
                 )
@@ -89,7 +89,7 @@ namespace BuildingCrusher.Data
             {
                 "dual_fist",
                 new SkillDef(
-                    "dual_fist", "쌍권", "양손으로 빠르게 연타합니다.",
+                    "dual_fist", "Dual Fist", "Double punch. 2 hits at 60% each",
                     SkillType.DualFist, SkillCategory.WeaponChange,
                     damageMult: 0.6f
                 )
@@ -97,7 +97,7 @@ namespace BuildingCrusher.Data
             {
                 "wrecking_ball",
                 new SkillDef(
-                    "wrecking_ball", "레킹볼", "거대한 공으로 광역을 강타합니다.",
+                    "wrecking_ball", "Wrecking Ball", "Giant ball. Speed -50%, 180 AOE, Damage +120%",
                     SkillType.WreckingBall, SkillCategory.WeaponChange,
                     attackSpeedMult: 1.5f, damageMult: 2.2f, rangeMult: 1.2f, isAoe: true
                 )
@@ -106,7 +106,7 @@ namespace BuildingCrusher.Data
             {
                 "explosion_impact",
                 new SkillDef(
-                    "explosion_impact", "폭발 충격", "공격 시 폭발을 일으켜 추가 피해를 줍니다.",
+                    "explosion_impact", "Explosion", "Blast on hit. 30% splash to adjacent floors",
                     SkillType.ExplosionImpact, SkillCategory.SpecialEffect,
                     effectDamage: 0.3f
                 )
@@ -114,7 +114,7 @@ namespace BuildingCrusher.Data
             {
                 "electric_chain",
                 new SkillDef(
-                    "electric_chain", "전기 연쇄", "전기가 인근 구조물로 연쇄됩니다.",
+                    "electric_chain", "Chain Lightning", "Lightning chains up to 3 floors",
                     SkillType.ElectricChain, SkillCategory.SpecialEffect,
                     effectDamage: 0.25f
                 )
@@ -122,7 +122,7 @@ namespace BuildingCrusher.Data
             {
                 "frost_strike",
                 new SkillDef(
-                    "frost_strike", "냉기 타격", "공격 시 대상을 일시적으로 빙결시킵니다.",
+                    "frost_strike", "Frost Strike", "Freeze 3s. Defense=0, stops debris",
                     SkillType.FrostStrike, SkillCategory.SpecialEffect,
                     effectDuration: 3f
                 )
@@ -130,7 +130,7 @@ namespace BuildingCrusher.Data
             {
                 "flame_strike",
                 new SkillDef(
-                    "flame_strike", "화염 타격", "공격 시 화염을 부착하여 지속 피해를 줍니다.",
+                    "flame_strike", "Flame Strike", "Fire DOT. 20% damage/tick for 5s",
                     SkillType.FlameStrike, SkillCategory.SpecialEffect,
                     effectDamage: 0.2f, effectDuration: 5f
                 )
@@ -138,7 +138,7 @@ namespace BuildingCrusher.Data
             {
                 "earthquake",
                 new SkillDef(
-                    "earthquake", "지진", "일정 확률로 지진을 발동해 광역 피해를 줍니다.",
+                    "earthquake", "Earthquake", "20% chance: damage all floors",
                     SkillType.Earthquake, SkillCategory.SpecialEffect,
                     effectChance: 0.2f, effectDamage: 0.1f
                 )
