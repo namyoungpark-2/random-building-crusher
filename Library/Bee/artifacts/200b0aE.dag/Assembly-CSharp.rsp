@@ -417,6 +417,7 @@
 "Assets/Scripts/Rendering/CharacterRenderer.cs"
 "Assets/Scripts/Rendering/EffectsManager.cs"
 "Assets/Scripts/Rendering/HazardRenderer.cs"
+"Assets/Scripts/Rendering/SpriteHelper.cs"
 "Assets/Scripts/UI/LevelUpModal.cs"
 "Assets/Scripts/UI/UIManager.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
