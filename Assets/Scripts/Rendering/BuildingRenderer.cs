@@ -34,12 +34,32 @@ namespace BuildingCrusher.Rendering
             _currentFloorCount = 0;
         }
 
+        float _shakeTimer;
+        float _lastTotalHp = -1f;
+
         public void Render(GameSnapshot snap)
         {
             if (snap.building.defId == null) return;
 
             if (_currentBuildingId != snap.building.defId || _currentFloorCount != snap.building.floors.Length)
                 RebuildFloorViews(snap);
+
+            // Shake on hit
+            if (_lastTotalHp > 0f && snap.building.totalHp < _lastTotalHp)
+                _shakeTimer = 0.1f;
+            _lastTotalHp = snap.building.totalHp;
+
+            if (_shakeTimer > 0f)
+            {
+                _shakeTimer -= Time.deltaTime;
+                float shake = _shakeTimer * 3f;
+                buildingContainer.localPosition = new Vector3(
+                    Random.Range(-shake, shake), Random.Range(-shake, shake), 0f);
+            }
+            else
+            {
+                buildingContainer.localPosition = Vector3.zero;
+            }
 
             for (int i = 0; i < snap.building.floors.Length; i++)
             {
@@ -56,11 +76,12 @@ namespace BuildingCrusher.Rendering
                 view.gameObject.SetActive(true);
                 float hpRatio = fs.hp / fs.maxHp;
 
-                var bdef = BuildingDefs.ALL[snap.building.defId];
-                Color c = Color.white; // use sprite's own color
-                if (hpRatio < 0.1f) c = new Color(0.5f, 0.5f, 0.5f);
+                // Color based on damage level
+                Color c = Color.white;
+                if (hpRatio < 0.1f) c = new Color(0.4f, 0.35f, 0.3f);
+                else if (hpRatio < 0.3f) c = new Color(0.6f, 0.5f, 0.4f);
                 else if (hpRatio < 0.5f) c = new Color(0.8f, 0.7f, 0.6f);
-                if (fs.frozen) c = Color.cyan;
+                if (fs.frozen) c = new Color(0.5f, 0.8f, 1f);
 
                 view.SetColor(c);
             }

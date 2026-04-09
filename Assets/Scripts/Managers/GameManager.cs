@@ -63,12 +63,15 @@ namespace BuildingCrusher.Managers
                 }
                 return;
             }
-            if (_state.paused || _state.levelUpPending) return;
+            // Update game logic (skip if paused/level-up)
+            if (!_state.paused && !_state.levelUpPending)
+            {
+                float dt = Mathf.Min(0.033f, Time.deltaTime);
+                GameEngine.UpdateGame(_state, dt);
+            }
 
-            float dt = Mathf.Min(0.033f, Time.deltaTime);
-            GameEngine.UpdateGame(_state, dt);
+            // Always render (even during level-up, to show the modal)
             _snapshot = GameSnapshot.Create(_state);
-
             _buildingRenderer.Render(_snapshot);
             _characterRenderer.Render(_snapshot);
             _hazardRenderer.Render(_snapshot);

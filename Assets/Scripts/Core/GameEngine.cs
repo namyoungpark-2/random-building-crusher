@@ -23,11 +23,11 @@ namespace BuildingCrusher.Core
                 character = new CharacterState
                 {
                     x = GameData.WORLD_WIDTH * 0.5f,
-                    y = GameData.WORLD_HEIGHT * 0.75f,
+                    y = GameData.WORLD_HEIGHT * 0.55f,
                     hp = GameData.BASE_HP,
                     maxHp = GameData.BASE_HP,
                     targetX = GameData.WORLD_WIDTH * 0.5f,
-                    targetY = GameData.WORLD_HEIGHT * 0.75f,
+                    targetY = GameData.WORLD_HEIGHT * 0.55f,
                 },
             };
             SpawnBuilding(state);
@@ -100,6 +100,20 @@ namespace BuildingCrusher.Core
             // Stun
             if (c.stunTimer > 0f) { c.stunTimer -= dt; return; }
 
+            // Auto-approach building if not moving manually
+            float buildingX = GameData.WORLD_WIDTH * 0.5f;
+            float buildingY = GameData.WORLD_HEIGHT * 0.5f + 150f; // stand near bottom of building
+            float range = GetAttackRange(s);
+            float distToBuilding = Dist(c.x, c.y, buildingX, buildingY);
+
+            if (!c.moving && distToBuilding > range + 50f && s.building != null && !s.building.AllDestroyed())
+            {
+                // Auto-walk toward building
+                c.targetX = buildingX;
+                c.targetY = buildingY;
+                c.moving = true;
+            }
+
             // Movement
             if (c.moving)
             {
@@ -124,12 +138,9 @@ namespace BuildingCrusher.Core
             c.attackCooldown -= dt;
             if (c.attackCooldown <= 0f && s.building != null && !s.building.AllDestroyed())
             {
-                // Check range to building (building is centered at WORLD_WIDTH/2)
-                float buildingX = GameData.WORLD_WIDTH * 0.5f;
-                float buildingY = GameData.WORLD_HEIGHT * 0.5f;
-                float range = GetAttackRange(s);
+                float attackDist = Dist(c.x, c.y, buildingX, buildingY);
 
-                if (Dist(c.x, c.y, buildingX, buildingY) <= range + 200f)
+                if (attackDist <= range + 200f)
                 {
                     PerformAttack(s);
                     c.attackCooldown = GetAttackInterval(s);

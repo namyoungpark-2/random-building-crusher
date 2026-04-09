@@ -9,6 +9,8 @@ namespace BuildingCrusher.Rendering
     {
         [SerializeField] GameObject characterPrefab;
         CharacterView _view;
+        float _attackAnimTimer;
+        float _lastHp;
 
         public void Initialize()
         {
@@ -30,7 +32,7 @@ namespace BuildingCrusher.Rendering
             _view = go.GetComponent<CharacterView>();
             if (_view == null) _view = go.AddComponent<CharacterView>();
             go.transform.localScale = new Vector3(1.5f, 1.5f, 1f);
-            Debug.Log($"[CharacterRenderer] Initialized at {go.transform.position}, sprite={_view.SR.sprite != null}");
+            _lastHp = -1f;
         }
 
         public void Render(GameSnapshot snap)
@@ -40,18 +42,54 @@ namespace BuildingCrusher.Rendering
             _view.transform.position = pos;
 
             var sr = _view.SR;
-            if (sr.sprite == null)
+            if (sr.sprite == null) sr.sprite = SpriteHelper.Character;
+
+            // Attack animation (scale punch)
+            if (_attackAnimTimer > 0f)
             {
-                sr.sprite = SpriteHelper.Character;
-                Debug.LogWarning("[CharacterRenderer] Sprite was null, re-assigned");
+                _attackAnimTimer -= Time.deltaTime;
+                float t = _attackAnimTimer / 0.15f;
+                float scale = 1.5f + Mathf.Sin(t * Mathf.PI) * 0.4f;
+                _view.transform.localScale = new Vector3(scale, scale, 1f);
+            }
+            else
+            {
+                _view.transform.localScale = new Vector3(1.5f, 1.5f, 1f);
             }
 
-            if (snap.character.invincible)
+            // Detect attack (building HP decreased = attack happened)
+            // We use a simple heuristic: if the building has a current floor being damaged
+            if (snap.building.currentFloorIndex >= 0 && snap.floatingTexts.Length > 0)
+            {
+                // Check if there's a new damage text (attack just happened)
+                foreach (var ft in snap.floatingTexts)
+                {
+                    if (ft.ttl > 0.9f) // newly created text
+                    {
+                        _attackAnimTimer = 0.15f;
+                        break;
+                    }
+                }
+            }
+
+            // Hit flash (hp decreased)
+            if (_lastHp > 0f && snap.character.hp < _lastHp)
+            {
+                sr.color = Color.red;
+            }
+            else if (snap.character.invincible)
+            {
                 sr.color = new Color(1f, 1f, 1f, Mathf.PingPong(Time.time * 8f, 1f));
+            }
             else if (snap.character.stunned)
-                sr.color = Color.gray;
+            {
+                sr.color = new Color(0.5f, 0.5f, 1f); // blue tint for stun
+            }
             else
+            {
                 sr.color = Color.white;
+            }
+            _lastHp = snap.character.hp;
         }
     }
 }
