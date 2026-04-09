@@ -43,6 +43,10 @@ namespace BuildingCrusher.Managers
             _hazardRenderer = FindAnyObjectByType<HazardRenderer>();
             _effectsManager = FindAnyObjectByType<EffectsManager>();
             _uiManager = FindAnyObjectByType<UIManager>();
+
+            Debug.Log($"[GameManager] Found: building={_buildingRenderer != null}, char={_characterRenderer != null}, " +
+                      $"hazard={_hazardRenderer != null}, effects={_effectsManager != null}, ui={_uiManager != null}");
+
             ShowTitle();
         }
 

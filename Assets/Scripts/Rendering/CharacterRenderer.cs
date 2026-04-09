@@ -29,7 +29,8 @@ namespace BuildingCrusher.Rendering
             }
             _view = go.GetComponent<CharacterView>();
             if (_view == null) _view = go.AddComponent<CharacterView>();
-            go.transform.localScale = new Vector3(0.5f, 0.5f, 1f);
+            go.transform.localScale = new Vector3(1.5f, 1.5f, 1f);
+            Debug.Log($"[CharacterRenderer] Initialized at {go.transform.position}, sprite={_view.SR.sprite != null}");
         }
 
         public void Render(GameSnapshot snap)
@@ -39,6 +40,12 @@ namespace BuildingCrusher.Rendering
             _view.transform.position = pos;
 
             var sr = _view.SR;
+            if (sr.sprite == null)
+            {
+                sr.sprite = SpriteHelper.Character;
+                Debug.LogWarning("[CharacterRenderer] Sprite was null, re-assigned");
+            }
+
             if (snap.character.invincible)
                 sr.color = new Color(1f, 1f, 1f, Mathf.PingPong(Time.time * 8f, 1f));
             else if (snap.character.stunned)

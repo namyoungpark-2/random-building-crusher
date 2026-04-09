@@ -8,11 +8,11 @@ namespace BuildingCrusher.Rendering
 {
     public class BuildingRenderer : MonoBehaviour
     {
-        [SerializeField] GameObject floorPrefab;
         [SerializeField] Transform buildingContainer;
 
         readonly List<BuildingView> _floorViews = new();
         string _currentBuildingId;
+        int _currentFloorCount;
 
         public void Initialize()
         {
@@ -23,6 +23,7 @@ namespace BuildingCrusher.Rendering
                 buildingContainer = go.transform;
             }
             ClearFloors();
+            Debug.Log("[BuildingRenderer] Initialized");
         }
 
         void ClearFloors()
@@ -30,17 +31,19 @@ namespace BuildingCrusher.Rendering
             foreach (var v in _floorViews) if (v != null) Destroy(v.gameObject);
             _floorViews.Clear();
             _currentBuildingId = null;
+            _currentFloorCount = 0;
         }
 
         public void Render(GameSnapshot snap)
         {
             if (snap.building.defId == null) return;
 
-            if (_currentBuildingId != snap.building.defId || _floorViews.Count != snap.building.floors.Length)
+            if (_currentBuildingId != snap.building.defId || _currentFloorCount != snap.building.floors.Length)
                 RebuildFloorViews(snap);
 
             for (int i = 0; i < snap.building.floors.Length; i++)
             {
+                if (i >= _floorViews.Count) break;
                 var fs = snap.building.floors[i];
                 var view = _floorViews[i];
 
@@ -54,11 +57,10 @@ namespace BuildingCrusher.Rendering
                 float hpRatio = fs.hp / fs.maxHp;
 
                 var bdef = BuildingDefs.ALL[snap.building.defId];
-                Color c = bdef.color;
-                if (hpRatio < 0.1f) c = Color.Lerp(Color.black, c, 0.3f);
-                else if (hpRatio < 0.5f) c = Color.Lerp(new Color(0.5f, 0.3f, 0.1f), c, hpRatio);
-
-                if (fs.frozen) c = Color.Lerp(c, Color.cyan, 0.5f);
+                Color c = Color.white; // use sprite's own color
+                if (hpRatio < 0.1f) c = new Color(0.5f, 0.5f, 0.5f);
+                else if (hpRatio < 0.5f) c = new Color(0.8f, 0.7f, 0.6f);
+                if (fs.frozen) c = Color.cyan;
 
                 view.SetColor(c);
             }
@@ -68,34 +70,28 @@ namespace BuildingCrusher.Rendering
         {
             ClearFloors();
             _currentBuildingId = snap.building.defId;
+            _currentFloorCount = snap.building.floors.Length;
 
-            float floorHeight = 0.8f;
-            float floorWidth = 2f;
-            float baseY = -2f;
+            float floorHeight = 1.5f;
+            float floorWidth = 4f;
+            float baseY = -4f;
+
+            Debug.Log($"[BuildingRenderer] Building {snap.building.defId} with {snap.building.floors.Length} floors");
 
             for (int i = 0; i < snap.building.floors.Length; i++)
             {
-                GameObject go;
-                if (floorPrefab != null)
-                    go = Instantiate(floorPrefab, buildingContainer);
-                else
-                {
-                    go = new GameObject($"Floor_{i}");
-                    go.transform.SetParent(buildingContainer);
-                    var sr = go.AddComponent<SpriteRenderer>();
-                    sr.sprite = SpriteHelper.BuildingSprite(snap.building.defId);
-                    go.AddComponent<BuildingView>();
-                }
-
-                var view = go.GetComponent<BuildingView>();
-                if (view == null) view = go.AddComponent<BuildingView>();
+                var go = new GameObject($"Floor_{i}");
+                go.transform.SetParent(buildingContainer);
+                var sr = go.AddComponent<SpriteRenderer>();
+                sr.sprite = SpriteHelper.BuildingSprite(snap.building.defId);
+                sr.sortingOrder = 1;
+                var view = go.AddComponent<BuildingView>();
 
                 float yPos = baseY + i * floorHeight;
                 go.transform.localPosition = new Vector3(0f, yPos, 0f);
-                go.transform.localScale = new Vector3(floorWidth, floorHeight * 0.9f, 1f);
+                go.transform.localScale = new Vector3(floorWidth, floorHeight * 0.95f, 1f);
 
-                var bdef = BuildingDefs.ALL[snap.building.defId];
-                view.SetColor(bdef.color);
+                Debug.Log($"[BuildingRenderer] Floor {i} at y={yPos}, sprite={sr.sprite != null}");
 
                 _floorViews.Add(view);
             }
