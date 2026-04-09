@@ -22,6 +22,13 @@ namespace BuildingCrusher.Data
         public const int SCORE_PER_STAGE = 500;
         public const int SCORE_HP_BONUS_MAX = 1000;
 
+        // Building position (game coords) — bottom of building
+        public const float BUILDING_X = 540f;       // center horizontally
+        public const float BUILDING_BASE_Y = 1300f;  // bottom of building in game coords
+        public const float FLOOR_HEIGHT_GAME = 150f;  // each floor height in game units
+        // Character stands just below building base
+        public const float CHARACTER_STAND_Y = 1450f;
+
         public static int FloorsForStage(int stage) => Mathf.Min(3 + stage / 3, 8);
         public static float ExpForLevel(int level) => BASE_EXP_REQUIRED * Mathf.Pow(EXP_SCALING, level - 1);
         public static float BuildingHpAtStage(float baseHp, int stage) => baseHp * (1f + stage * BUILDING_HP_SCALE_PER_STAGE);

@@ -95,7 +95,9 @@ namespace BuildingCrusher.Rendering
 
             float floorHeight = 1.5f;
             float floorWidth = 4f;
-            float baseY = -4f;
+            // Convert building base from game coords to world coords
+            Vector3 baseWorld = Managers.GameManager.GameToWorld(Data.GameData.BUILDING_X, Data.GameData.BUILDING_BASE_Y);
+            float baseY = baseWorld.y;
 
             Debug.Log($"[BuildingRenderer] Building {snap.building.defId} with {snap.building.floors.Length} floors");
 

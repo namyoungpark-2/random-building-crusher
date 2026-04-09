@@ -22,12 +22,12 @@ namespace BuildingCrusher.Core
                 expRequired = GameData.ExpForLevel(1),
                 character = new CharacterState
                 {
-                    x = GameData.WORLD_WIDTH * 0.5f,
-                    y = GameData.WORLD_HEIGHT * 0.55f,
+                    x = GameData.BUILDING_X,
+                    y = GameData.CHARACTER_STAND_Y + 200f, // start a bit below, will auto-walk up
                     hp = GameData.BASE_HP,
                     maxHp = GameData.BASE_HP,
-                    targetX = GameData.WORLD_WIDTH * 0.5f,
-                    targetY = GameData.WORLD_HEIGHT * 0.55f,
+                    targetX = GameData.BUILDING_X,
+                    targetY = GameData.CHARACTER_STAND_Y + 200f,
                 },
             };
             SpawnBuilding(state);
@@ -100,17 +100,16 @@ namespace BuildingCrusher.Core
             // Stun
             if (c.stunTimer > 0f) { c.stunTimer -= dt; return; }
 
-            // Auto-approach building if not moving manually
-            float buildingX = GameData.WORLD_WIDTH * 0.5f;
-            float buildingY = GameData.WORLD_HEIGHT * 0.5f + 150f; // stand near bottom of building
+            // Auto-approach building base
+            float buildingX = GameData.BUILDING_X;
+            float standY = GameData.CHARACTER_STAND_Y;
             float range = GetAttackRange(s);
-            float distToBuilding = Dist(c.x, c.y, buildingX, buildingY);
+            float distToStand = Dist(c.x, c.y, buildingX, standY);
 
-            if (!c.moving && distToBuilding > range + 50f && s.building != null && !s.building.AllDestroyed())
+            if (!c.moving && distToStand > 30f && s.building != null && !s.building.AllDestroyed())
             {
-                // Auto-walk toward building
                 c.targetX = buildingX;
-                c.targetY = buildingY;
+                c.targetY = standY;
                 c.moving = true;
             }
 
@@ -134,11 +133,11 @@ namespace BuildingCrusher.Core
                 }
             }
 
-            // Attack
+            // Attack — check distance to building base
             c.attackCooldown -= dt;
             if (c.attackCooldown <= 0f && s.building != null && !s.building.AllDestroyed())
             {
-                float attackDist = Dist(c.x, c.y, buildingX, buildingY);
+                float attackDist = Dist(c.x, c.y, buildingX, GameData.BUILDING_BASE_Y);
 
                 if (attackDist <= range + 200f)
                 {
@@ -346,8 +345,8 @@ namespace BuildingCrusher.Core
         // ─── Hazards ────────────────────────────────────────────────────────
         static void SpawnDebris(GameState s, BuildingDef bdef)
         {
-            float bx = GameData.WORLD_WIDTH * 0.5f + Random.Range(-100f, 100f);
-            float by = GameData.WORLD_HEIGHT * 0.4f;
+            float bx = GameData.BUILDING_X + Random.Range(-100f, 100f);
+            float by = GameData.BUILDING_BASE_Y - GameData.FLOOR_HEIGHT_GAME;
             s.hazards.Add(new HazardInstance
             {
                 uid = s.nextHazardUid++,
@@ -370,8 +369,8 @@ namespace BuildingCrusher.Core
                     s.hazards.Add(new HazardInstance
                     {
                         uid = s.nextHazardUid++,
-                        x = GameData.WORLD_WIDTH * 0.5f + Random.Range(-150f, 150f),
-                        y = GameData.WORLD_HEIGHT * 0.3f + floorIdx * 60f,
+                        x = GameData.BUILDING_X + Random.Range(-150f, 150f),
+                        y = GameData.BUILDING_BASE_Y - floorIdx * GameData.FLOOR_HEIGHT_GAME,
                         vx = Random.Range(-200f, 200f),
                         vy = Random.Range(100f, 300f),
                         damage = bdef.hazardParam,
@@ -386,8 +385,8 @@ namespace BuildingCrusher.Core
                 s.hazards.Add(new HazardInstance
                 {
                     uid = s.nextHazardUid++,
-                    x = GameData.WORLD_WIDTH * 0.5f,
-                    y = GameData.WORLD_HEIGHT * 0.3f + floorIdx * 60f,
+                    x = GameData.BUILDING_X,
+                    y = GameData.BUILDING_BASE_Y - floorIdx * GameData.FLOOR_HEIGHT_GAME,
                     vx = 0f, vy = 0f,
                     damage = bdef.hazardParam,
                     lifetime = 0.5f,
@@ -402,10 +401,10 @@ namespace BuildingCrusher.Core
             s.hazards.Add(new HazardInstance
             {
                 uid = s.nextHazardUid++,
-                x = GameData.WORLD_WIDTH * 0.5f,
-                y = GameData.WORLD_HEIGHT * 0.3f,
-                vx = (s.character.x - GameData.WORLD_WIDTH * 0.5f) * 2f,
-                vy = (s.character.y - GameData.WORLD_HEIGHT * 0.3f) * 2f,
+                x = GameData.BUILDING_X,
+                y = GameData.BUILDING_BASE_Y - GameData.FLOOR_HEIGHT_GAME * 2f,
+                vx = (s.character.x - GameData.BUILDING_X) * 2f,
+                vy = (s.character.y - GameData.BUILDING_BASE_Y) * 2f,
                 damage = bdef.hazardParam,
                 lifetime = 3f,
                 type = "missile",
@@ -595,7 +594,7 @@ namespace BuildingCrusher.Core
         {
             if (s.gameOver || s.paused || s.levelUpPending) return;
             s.character.targetX = Mathf.Clamp(worldX, 50f, GameData.WORLD_WIDTH - 50f);
-            s.character.targetY = Mathf.Clamp(worldY, GameData.WORLD_HEIGHT * 0.5f, GameData.WORLD_HEIGHT - 50f);
+            s.character.targetY = Mathf.Clamp(worldY, GameData.BUILDING_BASE_Y - 100f, GameData.WORLD_HEIGHT - 50f);
             s.character.moving = true;
         }
 
